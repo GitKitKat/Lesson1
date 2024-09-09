@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> // include the string file to use the string type
+#include <string> // include the string file to use the string type (not necessary if you include the namespace)
 
 using namespace std; // any keywords related to std can be written without the std:: prefix (ie: std::cout -> cout)
 // related keywords used: string, cout, cin, endl
