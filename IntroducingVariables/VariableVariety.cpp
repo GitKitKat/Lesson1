@@ -3,6 +3,8 @@
 
 using namespace std; // any keywords related to std can be written without the std:: prefix (ie: std::cout -> cout)
 // related keywords used: string, cout, cin, endl
+typedef unsigned short int u_s_int; // similar to #define but for data modifiers; here any variable that should be modified this way can be modified with the shorthand
+typedef long double l_dou;
 
 static int vars()
 {
@@ -16,8 +18,8 @@ static int vars()
 
 	string job = "Trivia";
 
-	unsigned short int betterAge; // unsigned makes the lower limit 0; short puts a small limit on the scale of the variable
-	long double hugeDistance;
+	u_s_int betterAge; // unsigned makes the lower limit 0; short puts a small limit on the scale of the variable
+	l_dou hugeDistance;
 
 	betterAge = 4900;
 	hugeDistance = 403707;
