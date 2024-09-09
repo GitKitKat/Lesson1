@@ -97,7 +97,7 @@ static void repeatMSG()
 	}
 }
 
-void main() {
+int main() {
 
 	bool repeatCheck = true;
 
@@ -112,6 +112,7 @@ void main() {
 			cin >> repUser;
 
 			if (repUser == 'Y' || repUser == 'y') {
+				cout << "\n . \n\n . \n\n ." << endl;
 				repeatMSG();
 			}
 			else {
@@ -120,4 +121,5 @@ void main() {
 			}
 		}
 	}
+	return 0;
 }
