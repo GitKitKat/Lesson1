@@ -3,7 +3,7 @@
 
 using namespace std;
 
-static int conMeasure()
+static int conCenti()
 {
 	// prompts the user for a distance in centimeters
 	cout << "Please enter a measurement in centimeters (cm): ";

@@ -42,8 +42,8 @@ static int vars()
 	}
 	cout << "Hobby: " << job << endl;
 
-	cout << "\n" << "The oldest tree in the world was " << betterAge / 1000 << "." << betterAge - 4000 << " years old." << endl;
-	cout << "Our moon is currently " << hugeDistance/1000 << " kilometers away." << endl;
+	cout << "\n" << "The oldest tree in the world was " << betterAge * 0.001 << "." << betterAge - 4000 << " years old." << endl;
+	cout << "Our moon is currently " << hugeDistance * 0.001 << " kilometers away." << endl;
 
 	return 1;
 }
