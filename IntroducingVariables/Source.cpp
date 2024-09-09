@@ -35,7 +35,7 @@ static int choiceMSG()
 	return choiceUser;
 }
 
-static int repeatMSG()
+static void repeatMSG()
 {
 
 	int programChoice = choiceMSG();
@@ -95,11 +95,9 @@ static int repeatMSG()
 	else {
 		cout << " Sorry, but that isn't an option." << endl;
 	}
-
-	return 0;
 }
 
-int main() {
+void main() {
 
 	bool repeatCheck = true;
 
@@ -122,6 +120,4 @@ int main() {
 			}
 		}
 	}
-
-	return 0;
 }
