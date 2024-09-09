@@ -16,7 +16,21 @@ static int conTemp()
 	float tempFah = (tempCel * 9.0f) / 5.0f + 32;
 
 	// returns the converted value to the user
-	cout << tempCel << "degrees celsius " << " in fahrenheit is: " << tempFah << " degrees" << endl;
+	string userCel;
+	string userFah;
+	if (tempCel == 1) {
+		userCel = " degree celsius is ";
+	}
+	else {
+		userCel = " degrees celsius is ";
+	}
+	if (tempFah == 1) {
+		userFah = " degree fahrenheit.";
+	}
+	else {
+		userFah = " degrees fahrenheit.";
+	}
+	cout << tempCel << userCel << tempFah << userFah << endl;
 
 	return 1;
 }

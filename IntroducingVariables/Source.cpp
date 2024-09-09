@@ -10,7 +10,7 @@ using namespace std;
 
 static bool welcomeMSG()
 {
-	// to run or not to run the IntroducingVariables package
+	// to run or not to run IntroducingVariables
 	cout << " Welcome to Week 0 of CG Spectrum's Programming Course.\n Do you want to run a program? (Y/N): ";
 	char welcUser;
 	cin >> welcUser;
@@ -39,59 +39,34 @@ static void repeatMSG()
 {
 
 	int programChoice = choiceMSG();
+	int programRun;
+	string arrayChoice[] = {"VariableMath","VariableVariety","UserAge","ConvertTemp","ConvertMeasure"};
 
-	cout << "\n";
+	cout << "\n"; // /n will move the print cursor to a new line, anything in the same std::cout line as the \n will be printed on this line, anything following will be on a new line
+	if (programChoice > 0 && programChoice < 6) {
+		cout << "\n";
 
-	if (programChoice == 1) {
-		cout << "\n";
-		int runMath = math(); // run VariableMath.cpp	
-		if (runMath == 1) {
-			cout << "\n	VariableMath.cpp run complete." << endl; // /n will move the print cursor to a new line, anything in the same std::cout line as the \n will be printed on this line, anything following will be on a new line
+		if (programChoice == 1) {
+			programRun = math(); // run VariableMath.cpp
 		}
-		else {
-			cout << "\n VariableMath.cpp run unsuccessful." << endl;
+		else if (programChoice == 2) {
+			programRun = vars(); // run VariableVariety.cpp
 		}
-	}
-	else if (programChoice == 2) {
-		cout << "\n";
-		int runVars = vars(); // run VariableVariety.cpp
-		if (runVars == 1) {
-			cout << "\n	VariableVariety.cpp run complete." << endl;
+		else if (programChoice == 3) {
+			programRun = uAge(); // run UserAge.cpp
 		}
-		else {
-			cout << "\n VariableVariety.cpp run unsuccessful." << endl;
+		else if (programChoice == 4) {
+			programRun = conTemp(); // run ConvertTemp.cpp
 		}
-	}
-	else if (programChoice == 3) {
-		cout << "\n";
-		int runAge = uAge(); // run UserAge.cpp
-		if (runAge == 1) {
-			cout << "\n	UserAge.cpp run complete." << endl;
+		else if (programChoice == 5) {
+			programRun = conMeasure(); // run ConvertMeasure.cpp
 		}
-		else {
-			cout << "\n UserAge.cpp run unsuccessful." << endl;
+
+		if (programRun > 0) {
+			cout << "\n	" << arrayChoice[programChoice-1] << ".cpp run complete." << endl;
 		}
 	}
-	else if (programChoice == 4) {
-		cout << "\n";
-		int runTemp = conTemp(); // run ConvertTemp.cpp
-		if (runTemp == 1) {
-			cout << "\n	ConvertTemp.cpp run complete." << endl;
-		}
-		else {
-			cout << "\n ConvertTemp.cpp run unsuccessful." << endl;
-		}
-	}
-	else if (programChoice == 5) {
-		cout << "\n";
-		int runMeasure = conMeasure(); // run ConvertMeasure.cpp
-		if (runMeasure == 1) {
-			cout << "\n	ConvertMeasure.cpp run complete." << endl;
-		}
-		else {
-			cout << "\n ConvertMeasure.cpp run unsuccessful." << endl;
-		}
-	}
+
 	else {
 		cout << " Sorry, but that isn't an option." << endl;
 	}
