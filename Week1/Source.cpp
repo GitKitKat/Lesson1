@@ -10,7 +10,7 @@ using namespace std;
 
 static bool welcomeMSG()
 {
-	// to run or not to run IntroducingVariables
+	// to run or not to run Week1
 	cout << " Welcome to Week 1 of CG Spectrum's Programming Course.\n Do you want to run a program? (Y/N): ";
 	char welcUser;
 	cin >> welcUser;
