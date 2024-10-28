@@ -1,7 +1,13 @@
-#ifndef STATS.H
-#define STATS.H
+#ifndef STATS_H
+#define STATS_H // options: Gameobject, Entity
 
 #include <string>
+
+struct Room {
+
+
+
+};
 
 class Stats {
 
@@ -17,6 +23,7 @@ public:
 
 protected:
 	float time;
+	std::string fileName;
 	//std::string adventureName;
 	
 };

@@ -1,7 +1,21 @@
-[ID=sceneName]
-Opening line + act
-[IDchoice]
+[ID=introduction]
+--Is this thing on? Ahem--Hello! 
+This is Max. Boss must've mentioned an additional briefing?
+Before we start, check your phone. Dead, right? 
+This place's a bit special, so without Boss' pager, you're off the grid. 
+Try not to lose it... 
+
+Also, be careful not to trigger anything while you're looking, 'cause the previous owners were a little eccentric. 
+Don't worry though, I heard the traps are surface trauma only!
+ 
+Lastly, your task.
+You're looking for an old, emerald brooch. Should be somewhere in the West wing. 
+Try finding it before sundown.--
+
+[ID=frontPorch]
+You are standing on the front porch. Ahead of you is the manor's front door. To your right is the __ forest. Behind you is the road back. To your left is a path to the manor's garden. 
+[IDchoicelist1]
 [ID=choice1]
 [ID=choice2] [GO=sceneName2]
 
-[ID=sceneName2]
+[ID=sceneName2] 

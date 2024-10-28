@@ -3,6 +3,7 @@
 Stats::Stats() {
 
 	time = 0;
+	fileName = "filename.txt";
 	//constructor
 
 }
@@ -13,8 +14,3 @@ Stats::~Stats() {
 
 }
 
-/*void Stats::SetAdventure(std::string txtName) {
-
-	adventureName = txtName + ".txt";
-
-}*/

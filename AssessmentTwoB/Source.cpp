@@ -8,26 +8,14 @@
 
 void clearConsole();
 std::string startingChoice();
-void playAdventure();
+void playAdventure(std::string txtFilename);
 
 int main() {
 
-	std::string userChoice = startingChoice();
-	std::ifstream inFile(userChoice);
+	std::string userChoice;
+	House * houseAdventure = new House();
 
-	if (!inFile.is_open()) {
-		std::cout << "The text adventure, " << userChoice << ", couldn't be opened." << std::endl;
-		return 0;
-	}
-	else {
-
-		playAdventure();
-
-
-
-
-		inFile.close();
-	}
+	playAdventure(startingChoice());
 
 
 	return 0;
@@ -43,20 +31,20 @@ void clearConsole() {
 
 std::string startingChoice() {
 
-	int userInput;
+	int userInput = 1;
 
 	std::cout << "Available text adventures: "
 		"\n1. Retrieve an item from a Haunted House. "
 		"\n2. Survive a week on a Deserted Island."
-		"\nWhich adventure will you pick?: ";
+		"\n\nWhich adventure will you pick?: ";
 	std::cin >> userInput;
 
 	if (userInput == 1) {
-		House* houseAdventure = new House();
 		return "HauntedHouse.txt";
-	}
-	else if (userInput == 2) {
-		//return "DesertedIsland.txt";
+
+	} else if (userInput == 2) {
+		return "";
+
 	}
 	else {
 		clearConsole();
@@ -66,8 +54,28 @@ std::string startingChoice() {
 
 }
 
-void playAdventure() {
+void playAdventure(std::string txtFilename) {
+	
+	clearConsole();
+
+	std::string newLine;
+	char linePtr = '[ID=';
+	std::ifstream inFile(txtFilename);
+
+	if (!inFile.is_open()) {
+		std::cout << "The text adventure, " << txtFilename << ", couldn't be opened." << std::endl;
+	}
+	else {
+		// this loop pulls a line from the related text file
+		while (std::getline(inFile,newLine)) {
+			
+			std::cout << newLine << std::endl;
+		
+		}
 
 
+
+		inFile.close();
+	}
 
 }
