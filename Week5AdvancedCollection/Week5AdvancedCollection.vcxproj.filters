@@ -24,22 +24,19 @@
     <ClCompile Include="Task3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task4.cpp">
+    <ClCompile Include="Vectors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task6.cpp">
+    <ClCompile Include="Iterators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task7.cpp">
+    <ClCompile Include="Lists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Deque.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task11.cpp">
+    <ClCompile Include="Profiling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

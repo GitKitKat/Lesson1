@@ -15,31 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Task1.cpp">
+    <ClCompile Include="Task1Definition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task2.cpp">
+    <ClCompile Include="Task2Memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task3.cpp">
+    <ClCompile Include="Task3Pasing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Task4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task6.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task7.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

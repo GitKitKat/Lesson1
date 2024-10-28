@@ -1,0 +1,7 @@
+[ID=sceneName]
+Opening line + act
+[IDchoice]
+[ID=choice1]
+[ID=choice2] [GO=sceneName2]
+
+[ID=sceneName2]

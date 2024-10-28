@@ -27,19 +27,7 @@
     <ClCompile Include="Task4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task6.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Task7.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

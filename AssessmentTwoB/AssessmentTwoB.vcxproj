@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -29,9 +29,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{494bfb13-cdf3-4dee-9db0-8a7edc974fb7}</ProjectGuid>
-    <RootNamespace>Week2</RootNamespace>
+    <ProjectGuid>{e3d9702a-31ad-4ac1-9ac8-be58b87fb20d}</ProjectGuid>
+    <RootNamespace>AssessmentTwoB</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>WrittenAssessmentTwoB</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -183,14 +184,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Task1.cpp" />
-    <ClCompile Include="Task11.cpp" />
-    <ClCompile Include="Task2.cpp" />
-    <ClCompile Include="Task3.cpp" />
-    <ClCompile Include="Task4.cpp" />
-    <ClCompile Include="Task6.cpp" />
-    <ClCompile Include="Task7.cpp" />
-    <ClCompile Include="Task9.cpp" />
+    <ClCompile Include="Stats.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stats.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

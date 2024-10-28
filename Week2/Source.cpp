@@ -5,11 +5,17 @@
 #include "Task4.cpp"
 #include "Task6.cpp"
 #include "Task7.cpp"
+#include "Task9.cpp"
+#include "Task11.cpp"
 
 using namespace std;
 
-static bool welcomeMSG()
-{
+bool welcomeMSG();
+int choiceMSG();
+void repeatMSG();
+void clearConsole();
+
+ bool welcomeMSG() {
 	// to run or not to run Week2
 	cout << " Welcome to Week 2 of CG Spectrum's Programming Course.\n Do you want to run a program? (Y/N): ";
 	char welcUser;
@@ -24,8 +30,7 @@ static bool welcomeMSG()
 	}
 }
 
-static int choiceMSG()
-{
+ int choiceMSG() {
 	// choosing a program within Week2
 	cout << "\n There are six programs available:"
 		<< "\n	1. Task1.cpp : Compares a number inputted by the user to the number 5."
@@ -33,7 +38,9 @@ static int choiceMSG()
 		<< "\n	3. Task3.cpp : Determines whether a number inputted by the user is prime."
 		<< "\n	4. Task4.cpp : Determines whether a number inputted by the user is positive, negative, even or odd."
 		<< "\n	5. Task6.cpp : Converts a character inputted by the user into the opposite (lower/uppercase) case."
-		<< "\n	6. Task7.cpp : Finds the largest, smallest and duplicate numbers in a set inputted by the user." << endl;
+		<< "\n	6. Task7.cpp : Finds the largest, smallest and duplicate numbers in a set inputted by the user."
+		<< "\n	7. Task9.cpp : A calculator for two numbers."
+		<< "\n	8. Task11.cpp : Text adventure!" << endl;
 	cout << "\n Which of these do you want to run? (ie: 1): ";
 	int choiceUser;
 	cin >> choiceUser;
@@ -41,12 +48,11 @@ static int choiceMSG()
 	return choiceUser;
 }
 
-static void repeatMSG()
-{
+ void repeatMSG() {
 
 	int programChoice = choiceMSG();
 	int programRun;
-	string arrayChoice[] = { "Task1","Task2","Task3","Task4","Task6","Task7" };
+	string arrayChoice[] = { "Task1","Task2","Task3","Task4","Task6","Task7","Task9","Task11"};
 
 	cout << "\n\n"; 
 
@@ -82,6 +88,16 @@ static void repeatMSG()
 		programRun = compMax(); // run Task7.cpp
 		break;
 	}
+	case 7:
+	{
+		programRun = userCalculator(); // run Task9.cpp
+		break;
+	}
+	case 8:
+	{
+		programRun = textAdventure(); // run Task11.cpp
+		break;
+	}
 	default:
 	{
 		cout << " Sorry, but that isn't an option." << endl;
@@ -92,11 +108,21 @@ static void repeatMSG()
 	}
 }
 
+ void clearConsole() {
+
+#ifdef _WIN32
+	 system("CLS");
+#else
+	 system("clear"); 
+#endif
+
+ }
+
 int main() {
 
 	bool repeatCheck = true;
-
 	bool welcome = welcomeMSG();
+
 	if (welcome == true) {
 		repeatMSG();
 
@@ -107,7 +133,7 @@ int main() {
 			cin >> repUser;
 
 			if (repUser == 'Y' || repUser == 'y') {
-				cout << "\n . \n\n . \n\n ." << endl;
+				clearConsole();
 				repeatMSG();
 			}
 			else {
