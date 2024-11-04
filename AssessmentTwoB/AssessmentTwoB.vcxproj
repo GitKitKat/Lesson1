@@ -183,13 +183,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="House.cpp" />
+    <ClCompile Include="SceneLoader.cpp" />
+    <ClCompile Include="DesertedIslandObject.cpp" />
+    <ClCompile Include="HauntedHouseObject.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="AdventureObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="House.h" />
-    <ClInclude Include="Stats.h" />
+    <ClInclude Include="SceneLoader.h" />
+    <ClInclude Include="DesertedIslandObject.h" />
+    <ClInclude Include="HauntedHouseObject.h" />
+    <ClInclude Include="AdventureObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

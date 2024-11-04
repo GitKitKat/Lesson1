@@ -18,18 +18,30 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stats.cpp">
+    <ClCompile Include="AdventureObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="House.cpp">
+    <ClCompile Include="HauntedHouseObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DesertedIslandObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stats.h">
+    <ClInclude Include="AdventureObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="House.h">
+    <ClInclude Include="HauntedHouseObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DesertedIslandObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

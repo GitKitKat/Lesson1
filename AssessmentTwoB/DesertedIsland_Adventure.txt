@@ -1,0 +1,9 @@
+[Scene]
+(ID)[Introduction]
+(Desc)You awake on an empty beach.
+(Desc)Around you are the scattered wrecks of a rowboat, and behind you is sparse vegetation. 
+(Desc)In the distance you can see a lighthouse, but much of it is obscured by fog. 
+[EndScene]
+
+
+
