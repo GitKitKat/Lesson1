@@ -7,7 +7,7 @@
 HauntedHouseObject::HauntedHouseObject() {
 	
 	playerFear = 0;
-	time = 10.0f; // Time in hours
+	timer = 10.0f; // Time in hours
 	filename = "HauntedHouse_Adventure.txt";
 
 }
@@ -26,9 +26,35 @@ void HauntedHouseObject::ChangeFear(int affectFear) {
 // Prints the remaining time in hours and minutes. 
 void HauntedHouseObject::TellTime() {
 
-	int hours = int(time);
-	int minutes = int((time - hours) * 100);
+	int hours = int(timer);
+	int minutes = int((timer - hours) * 100);
 
-	std::cout << "There are currently " << hours << " hours and " << minutes << " minutes until sundown." << std::endl;
+	if (minutes >= 60) {
+		
+		minutes -= 60;
+		hours++;
 
+	}
+
+	if (timer <= 0) {
+
+		minutes = 0;
+
+	}
+	
+	if (minutes == 0 && hours > 0) {
+
+		std::cout << "There are currently " << hours << " hours until sundown." << std::endl;
+
+	} else if (hours == 0) {
+
+		std::cout << "There are currently " << minutes << " minutes until sundown." << std::endl;
+
+	}
+	else {
+
+		std::cout << "There are currently " << hours << " hours and " << minutes << " minutes until sundown." << std::endl;
+	
+	}
 }
+

@@ -8,7 +8,7 @@ DesertedIslandObject::DesertedIslandObject() {
 
 	playerStamina = 100;
 	playerHealth = 50;
-	time = 5; // Time in days
+	timer = 5; // Time in days
 	filename = "DesertedIsland_Adventure.txt";
 
 }
@@ -26,21 +26,19 @@ void DesertedIslandObject::ChangeStamina(int affectFear) {
 
 void DesertedIslandObject::ChangeHealth() {
 
-
-
 }
 
 // Prints the remaining time in days. 
 void DesertedIslandObject::TellTime() {
 
-	if (time == 0) {
+	if (timer == 0) {
 
 		std::cout << "The storm has come." << std::endl;
 
 	}
 	else {
 
-		std::cout << int(time) << " days until the storm." << std::endl;
+		std::cout << int(timer) << " days until the storm." << std::endl;
 
 	}
 

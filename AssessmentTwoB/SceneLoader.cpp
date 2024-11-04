@@ -48,13 +48,9 @@ void SceneLoader::SetDescription(std::string lineDesc) {
 
 void SceneLoader::PrintDescription(std::string sceneID) {
 
-	if (scenesMap[sceneID].size() > 1) {
+	for (std::string i : scenesMap[sceneID]) {
 
-		for (std::string i : scenesMap[sceneID]) {
-
-			std::cout << i << std::endl;
-
-		}
+		std::cout << i << std::endl;
 
 	}
 
@@ -70,15 +66,36 @@ void SceneLoader::AddToMap(std::string sceneID) {
 
 void SceneLoader::SetChoices(std::string lineChoiceDesc, std::string lineChoiceID) {
 
+	choicesMap.erase("");
 	choicesMap[lineChoiceDesc] = lineChoiceID;
 
 }
 
-void SceneLoader::ClearScene() {
+int SceneLoader::PrintChoices() {
 
-	scenesMap.clear();
-	sceneDescriptor.clear();
-	choicesMap.clear();
-	SceneLoader();
+	int i = 1;
+
+	for (auto it = choicesMap.begin(); it != choicesMap.end(); it++) {
+
+		std::cout << i << ". " << it->first << std::endl;
+		i++;
+
+	}
+
+	return choicesMap.size();
+
+}
+
+std::string SceneLoader::NextScene(int input) {
+
+	for (auto it = choicesMap.begin(); it != choicesMap.end(); it++) {
+
+		if (std::distance(choicesMap.begin(), it) == input - 1) {
+
+			return it->second;
+
+		}
+
+	}
 
 }
