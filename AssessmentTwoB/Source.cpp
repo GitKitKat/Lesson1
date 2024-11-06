@@ -1,17 +1,17 @@
-// Includes: Standard header files
+/* Includes: Standard header files */
 #include <iostream>
 #include <fstream>
 #include <string>
 
-// Includes: Class header files
+/* Includes: Class header files */
 #include "SceneLoader.h"
 #include "AdventureObject.h"
 #include "HauntedHouseObject.h"
 #include "DesertedIslandObject.h"
 
-// Declaration
-
-void playAdventure(int userInput);
+/* Declaration: */
+// This function loads the chosen text adventure and splits its scenes into separate objects.
+void loadAdventure(int userInput);
 
 // This is the project's entry point.
 int main() {
@@ -20,12 +20,12 @@ int main() {
 	int userInput = 0;
 
 	// Here, the user chooses which text adventure to run. 
-	// Any numerical error (the user inputs a number not in the list) will cause the prompt to clear the console and repeat.
+	// Any numerical error will clear the console and repeat the prompt.
 	while (true) {
 
 		std::cout << "From the available text adventures, enter your choice."
 			<< "\n1. Retrieve an item from a Haunted House."
-			<< "\n2. Survive a week on a Deserted Island." << std::endl;
+			<< "\n2. Survive on a Deserted Island." << std::endl;
 		std::cin >> userInput;
 
 		if (userInput == 1 || userInput == 2) {
@@ -35,29 +35,28 @@ int main() {
 		}
 
 		// If there is no error, the following lines will not be processed.
-		AdventureObject::clearConsole();
+		AdventureObject::ClearConsole();
 		std::cout << "That was not one of the available text adventures." << std::endl;
 
 	}
 
-	// Clears the console of any interactions before the text adventures start.
-	AdventureObject::clearConsole();
+	// Here, the console is cleared before the text adventures start.
+	AdventureObject::ClearConsole();
 
 	// Here, the chosen adventure is loaded.
-	playAdventure(userInput);
+	loadAdventure(userInput);
 
 	return 0;
 }
 
-// This function loads the chosen text adventure and splits its scenes into separate objects.
-void playAdventure(int userInput) {
+void loadAdventure(int userInput) {
 
-	// Variable declarations:
-	// (only for variables that most of playAdventure's logic will need)
-
+	/* Variable declarations:
+	These variables are used to hold and parse the data read from the text file. */
+	// This variable stores each whole line read from the text file.
 	std::string newLine = "";
-	std::string lineID = "";
-	std::string lineDescription = "";
+
+	// This variable stores the choices that follow the scene being read.
 	std::string lineChoice = "";
 
 	// This variable stores all information relevant to the chosen adventure, including scenes.
@@ -79,6 +78,8 @@ void playAdventure(int userInput) {
 
 	// This variable acts as an input stream.
 	std::ifstream inFile(myAdventure[0]->GetFile());
+
+	// This pointer variable is used to create an object that stores data loaded from the text file as a scene.
 	SceneLoader* scenePtr = nullptr;
 
 	if (!inFile.is_open()) {
@@ -103,29 +104,21 @@ void playAdventure(int userInput) {
 			// Here, the name of a scene is changed in the SceneLoader class (through a setter).
 			else if (newLine.rfind("(ID)", 0) == 0) {
 
-				lineID = newLine.substr(4);
-				scenePtr->SetSceneID(lineID);
+				scenePtr->SetSceneID(newLine.substr(4));
 
 			}
 			
+			// Here, the scene is marked as changing a value specific to the player
+			else if (newLine.rfind("(Stat)", 0) == 0) {
+
+				scenePtr->SetStatCase(newLine.substr(6));
+
+			}
+
 			// Here, the lines of description for a scene are passed to a vector in the SceneLoader class.
 			else if (newLine.rfind("(Desc)", 0) == 0) {
 
-				lineDescription = newLine.substr(6);
-				scenePtr->SetDescription(lineDescription);
-
-			}
-			
-			// Each scene in the text file ends with the [EndScene] line. 
-			// Here, that scene data is passed to the myAdventure object and the pointer is emptied.
-			else if (newLine.rfind("[EndScene]", 0) == 0) {
-
-				// Here the scene name (ID) is paired with its description in a map (in the SceneLoader class).
-				scenePtr->AddToMap(lineID);
-				myAdventure[0]->AddScene(*scenePtr);
-
-				delete scenePtr;
-				scenePtr = nullptr;
+				scenePtr->SetDescription(newLine.substr(6));
 
 			}
 			
@@ -134,15 +127,33 @@ void playAdventure(int userInput) {
 
 				lineChoice = newLine.substr(8);
 
-				// Variable definitions: 
-				// (as these variables are not used elsewhere, they are defined and declared here.
+				/* Variable definitions:
+				As these variables are not used elsewhere, they are defined and declared here. */
 
+				// This variable stores the index of the last character (of scene ID name) in a line.
 				int IDpos = lineChoice.find("]", 0) + 1;
+
+				// This variable stores the description of a choice (following a scene) after cutting off the scene ID it leads to.
 				std::string lineChoiceDesc = lineChoice.substr(IDpos);
+
+				// This variable stores the scene ID name of the scene that follows a choice (following a scene).
 				std::string lineChoiceID = lineChoice.substr(0, IDpos);
 				
 				// This information is passed to the SceneLoader class to be stored.
 				scenePtr->SetChoices(lineChoiceDesc, lineChoiceID);
+
+			}
+
+			// Each scene in the text file ends with the [EndScene] line. 
+			// Here, that scene data is passed to the myAdventure object and the pointer is emptied.
+			else if (newLine == "[EndScene]") {
+
+				// Here the scene name (ID) is paired with its description in a map (in the SceneLoader class).
+				scenePtr->AddToMap();
+				myAdventure[0]->AddScene(*scenePtr);
+
+				delete scenePtr;
+				scenePtr = nullptr;
 
 			}
 
@@ -151,7 +162,7 @@ void playAdventure(int userInput) {
 		inFile.close();
 		
 		// Here, the scenes that were loaded into the Adventure object are printed to the console in sequence. 
-		myAdventure[0]->AccessDescription(myAdventure[0]->GetFirstScene());
+		myAdventure[0]->PlayAdventure(myAdventure[0]->GetFirstScene());
 
 	}
 

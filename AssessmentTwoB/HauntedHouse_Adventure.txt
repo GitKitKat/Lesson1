@@ -63,12 +63,13 @@
 [Scene]
 (ID)[Path_Forest]
 (Desc)The path into the forest is cluttered with weeds, and the chilling air suggests that there won't be much sunlight as you venture farther in. 
-(Choice)[Forest]Continue walking. (Stat+)
+(Choice)[Forest]Continue walking.
 (Choice)[Front_Porch]Leave the forest.
 [EndScene]
 
 [Scene]
 (ID)[Forest]
+(Stat)+
 (Desc)The tree canopy looms overhead, and the intermittent noises of small animals grow further apart until they stop entirely.
 (Desc)It's as though the forest's residents have only just found the stranger in their midst. 
 (Desc)Surrounded by a deathly quiet, you can't tell if the blooming shadows are tricks of the light,
@@ -121,15 +122,16 @@
 (Desc)After picking up a shovel, you wreak havok on the shrubbery until you can see layers of cracked tiles underneath.
 (Desc)Belying your efforts, the plants creep across the exposed tiles until the garden looks nearly the same as when you found it.
 (Choice)[Vandal_Predecessor]Continue digging.
-(Choice)[Garden]Put away the shovel.
+(Choice)[Garden]Return the shovel.
 [EndScene]
 
 [Scene]
 (ID)[Vandal_Predecessor]
+(Stat)+
 (Desc)As you continue your war of attrition with surprisingly resilient plant-life, an opening is formed and you hear a hollow thud.
 (Desc)As the object rolls to a halt at your feet, you realize it's a small skull. How did it get here?
 (Desc)Perhaps it's not worth finding out from experience.
-(Choice)[Garden]Put away the shovel.
+(Choice)[Garden]Return the shovel and retreat.
 [EndScene]
 
 [Scene]
@@ -143,6 +145,7 @@
 (ID)[First_Floor_Lobby]
 (Desc)There are __ rooms around you. 
 (Choice)[Room]Enter the __ room.
+(Choice)[Lobby]Go back downstairs.
 [EndScene]
 
 [Scene]
@@ -153,6 +156,7 @@
 
 [Scene]
 (ID)[Interruption]
+(Stat)-
 (Desc)As your surroundings start to dim, you notice a slight tremor in your step. Although you're confident you can continue, it wouldn't be too bad to take a break, right...? 
 (Desc)With a last quick glance at your surroundings, you return to the manor's lobby.
 (Choice)[Lobby]Continue after taking a break.

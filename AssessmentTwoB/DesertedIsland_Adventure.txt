@@ -1,11 +1,177 @@
 [Scene]
 (ID)[Introduction]
-(Desc)You awake on an empty beach.
-(Desc)Around you are the scattered wrecks of a rowboat, and behind you is sparse vegetation. 
+(Desc)You awake on an empty beach, surrounded by short cliffs.
+(Desc)Around you are the scattered wrecks of a rowboat, and before you is a sloping path inland. 
 (Desc)In the distance you can see a lighthouse, but much of it is obscured by fog. 
-(Choice)Head into the distance.
-(Choice)Scavenge for parts.
+(Desc)Behind you is the rumbling sea.
+(Choice)[Clearing]Head inland.
+(Choice)[Boat]Scavenge for parts.
+(Choice)[Beach]Approach the water.
+(Choice)[Cliff]Approach the cliffs.
 [EndScene]
 
+[Scene]
+(ID)[Boat]
+(Desc)You sort through the wreckage but only find small clues.
+(Desc)The lower half of the boas has been thoroughly corroded by seawater, and parts of it crumble in your hands.
+(Desc)The only other item is a ruined life-vest that must have come from a larger ship.
+(Choice)[Introduction]Leave the wreckage.
+(Choice)[Boat_Wound]Search again.
+[EndScene]
 
+[Scene]
+(ID)[Boat_Wound]
+(Stat)-
+(Desc)It seems there is nothing more to find.
+(Desc)Frustrated, you accidentally scrape against a jagged plank.
+(Choice)[Introduction]Leave the wreckage.
+[EndScene]
 
+[Scene]
+(ID)[Cliff]
+(Desc)The beach seems to extend as far as the eye can see, but it is obscured by the cliffs after you turn around.
+(Desc)Between them is a path that leads further inland, but you are slightly more tempted by the steep cliffs that flank it. 
+(Choice)[Cliff_Left]Climb the leftmost cliff.
+(Choice)[Cliff_Right]Climb the rightmost cliff.
+(Choice)[Clearing]Head through the path.
+(Choice)[Introduction]Back away from the cliffs.
+[EndScene]
+
+[Scene]
+(ID)[Cliff_Left]
+(Stat)-
+(Desc)Although you have some experience with bouldering, you currently have no equipment and the cliff-face is slick with moisture.
+(Desc)There are plenty of protrusions to hold onto and the cliff is short, but the climb will be difficult.
+(Desc)If you drop down now, you can avoid a serious injury.
+(Choice)[Cliff_Left_Top]Continue climbing.
+(Choice)[Cliff]Jump down.
+[EndScene]
+
+[Scene]
+(ID)[Cliff_Left_Top]
+(Desc)Gritting your teeth, you continue climbing until you see weeds in the terrain.
+(Desc)Pulling yourself over the edge, you take some time to catch your breath.
+(Desc)
+(Desc)In the distance, you can see the lighthouse. It is much closer than you initially thought.
+(Desc)To your side is a short drop into the thinly populated edge of the island's forest.
+(Choice)[Lighthouse]Walk towards the lighthouse.
+(Choice)[Forest]Head down to the forest.
+[EndScene]
+
+[Scene]
+(ID)[Cliff_Right]
+(Stat)-
+(Desc)Although you have some experience with bouldering, you currently have no equipment and the cliff-face is slick with moisture.
+(Desc)There are plenty of protrusions to hold onto and the cliff is short, but the climb will be difficult.
+(Desc)If you drop down now, you can avoid a serious injury.
+(Choice)[Cliff_Right_Top]Continue climbing.
+(Choice)[Cliff]Jump down.
+[EndScene]
+
+[Scene]
+(ID)[Cliff_Right_Top]
+(Desc)Gritting your teeth, you continue climbing until you see weeds in the terrain.
+(Desc)Pulling yourself over the edge, you take some time to catch your breath.
+(Desc)
+(Desc)Ahead of you is a copse of trees that look a little different from those you saw from the beach.
+(Desc)To your side is a short drop into a clearing.
+(Choice)[Forest]Head into the forest.
+(Choice)[Clearing]
+[EndScene]
+
+[Scene]
+(ID)[Beach]
+(Desc)At first, the water seems identical to the tide at any other beach.
+(Desc)The clear seawater, tinted green with algae, froths white as it approaches you.
+(Desc)It recedes reluctantly, like a child who can't reach the top shelf's cookies but refuses to give up. 
+(Choice)[Introduction]Leave the waves behind.
+(Choice)[End_Time]Observe the tides more closely.
+[EndScene]
+
+[Scene]
+(ID)[Clearing]
+(Desc)After a short walk past the forest's edge, you reach a wide clearing surrounded by tall trees and shrubbery.
+(Desc)You can see parts of the lighthouse over the treetops.
+(Choice)[Introduction]Head back to the beach.
+(Choice)[Forest]Head into the forest.
+(Choice)[River]Follow the sound of rushing water.
+(Choice)[Time]Find a large tree to end the day.
+[EndScene]
+
+[Scene]
+(ID)[Forest]
+(Desc)
+(Choice)[Clearing]
+[EndScene]
+
+[Scene]
+(ID)[Time]
+(Desc)The sun will set soon, so you quickly find a tree to make a temporary resting spot.
+(Choice)[Camp]Spend the night.
+[EndScene]
+
+[Scene]
+(ID)[Camp]
+(Stat)+
+(Desc)With a short day ahead, you contemplate your next actions.
+(Choice)[Clearing]Head into the clearing.
+[EndScene]
+
+[Scene]
+(ID)[River]
+(Desc)Ahead of you is a bubbling stream with clear water and lined with shrubs.
+(Desc)The water is neither too deep nor too wide. 
+(Choice)[Fishing]Try for a fish.
+(Choice)[Berries]Search the nearby bushes.
+(Choice)[River_Crossing]Wade over to the other shore.
+[EndScene]
+
+[Scene]
+(ID)[Fishing]
+(Stat)+
+(Desc)After fashioning a rod from some nearby twigs, you settle down on the waterbed.
+(Desc)Some time passes, and you manage to pull up a small fish.
+(Desc)
+(Desc)After cooking it over a small fire, you feel a little fuller.
+(Choice)[River]Put away the fishing rod.
+(Choice)[Clearing]Leave the stream.
+[EndScene]
+
+[Scene]
+(ID)[Berries]
+(Stat)+
+(Desc)After searching through the bushes, you find a number of berries you recognize.
+(Desc)Some are tangier than others, while some are sweet.
+(Desc)
+(Desc)Following the virtue of 'quantity over quality', you feel a little fuller.
+(Choice)[River]Wash off your hands.
+(Choice)[Clearing]Leave the stream.
+[EndScene]
+
+[Scene]
+(ID)[River_Crossing]
+(Desc)After rolling up your tattered pants, you wade through the water.
+(Desc)The new shore seems more barren, but that could just be your imagination.
+(Choice)[Crossing_Forest]
+(Choice)[River]Wade back to the other shore.
+[EndScene]
+
+[Scene]
+(ID)[Interruption]
+(Stat)+
+(Desc)Beset by hunger, you abandon your current efforts to scavenge for edible foliage.
+(Desc)After washing down the aftertaste, you wait for digestion to kick in before continuing.
+(Choice)[Clearing]Head to the forest's clearing.
+[EndScene]
+
+[Scene]
+(ID)[End_Time]
+(Desc)The seawater slowly seeps into your clothes, drawing your attention.
+(Desc)You don't notice the abnormally rising waves until they have overtaken you.
+(Choice)[Exit]The swirling storm remains undefeated.
+[EndScene]
+
+[Scene]
+(ID)[Exit]
+(Desc)One way or another, you have left the island.
+[EndScene]
