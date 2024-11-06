@@ -84,7 +84,6 @@ protected:
 
 	int tempInput;
 	int tempChoices;
-//	std::string tempStr;
 	SceneLoader tempScene;
 	
 };

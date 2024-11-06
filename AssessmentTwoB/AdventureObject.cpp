@@ -11,7 +11,6 @@ AdventureObject::AdventureObject() {
 	tempChoices = 0;
 	tempInput = 0;
 	timer = 0;
-	//tempStr = "";
 	filename = "";
 	adventureScenes.push_back(tempScene);
 
@@ -134,7 +133,6 @@ void AdventureObject::PlayAdventure(std::string sceneID) {
 
 				std::cout << "That was not one of the available options." << std::endl;
 
-				// Here, the function calls itself to create a loop.
 				// The ID name of the scene doesn't change as the user's input was outside the bounds.
 				PlayAdventure(sceneID);
 
@@ -147,18 +145,16 @@ void AdventureObject::PlayAdventure(std::string sceneID) {
 				// Whether or not the user meets the requirements for a forced ending is checked here.
 				SetEnding(sceneID);
 
-				// Here, the function calls itself to create a loop.
-				PlayAdventure(sceneID);
-
 			}
 
 		}
 
-		else if (adventureScenes[i].GetSceneID() != sceneID && i == adventureScenes.size() - 1 && sceneID != "[Exit]") {
+	}
 
-			i = 0;
+	// Here, the function calls itself to create a loop.
+	if (sceneID != "[Exit]") {
 
-		}
+		PlayAdventure(sceneID);
 
 	}
 

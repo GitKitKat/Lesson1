@@ -35,7 +35,7 @@
 
 [Scene]
 (ID)[Ask_Max_West]
-(Desc)--West? From the front door, you'll get there if you pivot right three times. You do know your right from left?--
+(Desc)--West? From the front door, you'll get there if you turn left once. You do know your right from left?--
 (Choice)[Ask_Max]Ask another question.
 (Choice)[Front_Porch]Put away the pager.
 [EndScene]
@@ -70,7 +70,8 @@
 [Scene]
 (ID)[Forest]
 (Stat)+
-(Desc)The tree canopy looms overhead, and the intermittent noises of small animals grow further apart until they stop entirely.
+(Desc)The tree canopy looms overhead, and the intermittent noises of small animals grow further apart,
+(Desc)until they stop entirely.
 (Desc)It's as though the forest's residents have only just found the stranger in their midst. 
 (Desc)Surrounded by a deathly quiet, you can't tell if the blooming shadows are tricks of the light,
 (Desc)or figures inching closer. 
@@ -80,7 +81,7 @@
 [Scene]
 (ID)[Lobby]
 (Desc)The doors to the manor open easily. The interior is well-lit due to several large windows. The lobby is well-furnished, but many items that look like antiques are half-covered by thin tarps and dust. 
-(Desc)There is a wide staircase at the end of the lobby that leads to the first floor, and a set of doors that either lead outside or to rooms.
+(Desc)There is a wide staircase at the end of the lobby that leads to the first floor, and a set of doors that either lead outside or to small rooms.
 (Choice)[First_Floor]Go upstairs.
 (Choice)[Time]Check out the rooms.
 (Choice)[Garden]Visit the garden. 
@@ -90,7 +91,7 @@
 [Scene]
 (ID)[Time]
 (Desc)Most of the rooms are empty or littered with covered antiques, but in a certain room you notice there is a large grandfather clock leaning against the wall. 
-(Desc)Its inconsistent ticks sound unreliable, but it continues to faithfully tell the time. 
+(Desc)Its inconsistent ticks sound unreliable, yet it continues to faithfully tell the time. 
 (Choice)[Lobby]Return to the lobby.
 [EndScene]
 
@@ -119,8 +120,10 @@
 
 [Scene]
 (ID)[Garden_Vandal]
-(Desc)After picking up a shovel, you wreak havok on the shrubbery until you can see layers of cracked tiles underneath.
-(Desc)Belying your efforts, the plants creep across the exposed tiles until the garden looks nearly the same as when you found it.
+(Stat)+
+(Desc)After picking up a shovel, you wreak havoc on the shrubbery until you can see layers of cracked tiles underneath.
+(Desc)Belying your efforts, the plants creep across the exposed tiles,
+(Desc)until the garden looks nearly the same as when you found it.
 (Choice)[Vandal_Predecessor]Continue digging.
 (Choice)[Garden]Return the shovel.
 [EndScene]
@@ -136,22 +139,113 @@
 
 [Scene]
 (ID)[First_Floor]
-(Desc)The stairs seem to be in good condition. 
+(Desc)The wooden stairs seem to be in good condition, and rarely creak.
+(Desc)A few outlines on the walls suggest that there were once several paintings hung there.
 (Choice)[First_Floor_Lobby]Continue walking.
-(Choice)[Lobby]Go back downstairs.
+(Choice)[Lobby]Turn around.
 [EndScene]
 
 [Scene]
 (ID)[First_Floor_Lobby]
-(Desc)There are __ rooms around you. 
-(Choice)[Room]Enter the __ room.
+(Desc)The manor's first floor is spacious, with a single covered couch and three rooms.
+(Desc)The light filtered through large windows highlights the floating dust. 
+(Choice)[Left_Room]Enter the leftmost room.
+(Choice)[Center_Room]Enter the room ahead of you.
+(Choice)[Right_Room]Enter the rightmost room.
+(Choice)[Couch]Take a breather.
 (Choice)[Lobby]Go back downstairs.
 [EndScene]
 
 [Scene]
-(ID)[Room]
-(Desc)The room is 
+(ID)[Left_Room]
+(Desc)There is little in this room other than dust.
+(Desc)Before you turn, you catch a glimpse of a long cord hanging from the ceiling.
+(Choice)[Attic_Stairs]Pull the cord.
 (Choice)[First_Floor_Lobby]Leave the room.
+[EndScene]
+
+[Scene]
+(ID)[Attic_Stairs]
+(Desc)You pulled a cord, the cord pulled a panel, the panel pulled a stair.
+(Desc)It turns out this room was connected to the manor's attic.
+(Choice)[Attic]Climb the stairs.
+(Choice)[Left_Room]Release the cord.
+[EndScene]
+
+[Scene]
+(ID)[Left_Room_Stairs]
+(Desc)You pulled a cord, the cord pulled a panel, the panel pulled a stair.
+(Desc)It turns out the attic was connected to this room.
+(Choice)[Left_Room]Descend the stairs.
+(Choice)[Attic]Release the cord.
+[EndScene]
+
+[Scene]
+(ID)[Attic]
+(Desc)The attic, like the rest of the manor, is quite dusty.
+(Desc)Instead of scattered furniture, there are two cords on the floor.
+(Choice)[Left_Room_Stairs]Pull the leftmost cord.
+(Choice)[Brooch]Pull the rightmost cord.
+[EndScene]
+
+[Scene]
+(ID)[Brooch]
+(Desc)You pulled a cord and found a compartment.
+(Desc)Alongside a few old-looking photographs, you find the item you've been looking for.
+(Choice)[Photo]Examine the photographs.
+(Choice)[End_Brooch]Carefully retrieve the brooch.
+(Choice)[Attic]Close the compartment.
+[EndScene]
+
+[Scene]
+(ID)[Photo]
+(Desc)In the topmost photograph is a smiling couple, posing with a banner that reads 'Grand Opening!'. 
+(Desc)The rest of the photographs are obscured, but it seems they might disintegrate if you touch them.
+(Choice)[Attic]Close the compartment.
+(Choice)[End_Brooch]Carefully retrieve the brooch.
+[EndScene]
+
+[Scene]
+(ID)[Center_Room]
+(Desc)This room is locked. 
+(Desc)It looks like the owners don't want you snooping here...
+(Choice)[First_Floor_Lobby]Leave.
+[EndScene]
+
+[Scene]
+(ID)[Right_Room]
+(Desc)From the draped furniture and dust marks, you can tell that this is a bedroom.
+(Desc)There is one partly uncovered cupboard next to a covered bed with fanciful banisters.
+(Choice)[Bed]Check underneath the bed.
+(Choice)[Cupboard]Open the cupboard.
+(Choice)[First_Floor_Lobby]Leave the room.
+[EndScene]
+
+[Scene]
+(ID)[Bed]
+(Stat)+
+(Desc)You crouch down next to the bedframe, pager in hand.
+(Desc)Leaning closer, you peek underneath the wood and into the darkness.
+(Desc)As dust and cloth flutter before your eyes,
+(Desc)you point the dimly flashing light on your pager into the unknown.
+(Desc)
+(Desc)Was it just your imagination, or did two twinkling eyes flash back at you? 
+(Choice)[Right_Room]Retreat for now.
+[EndScene]
+
+[Scene]
+(ID)[Cupboard]
+(Desc)The cupboard creaks open with all the grandeur of a treasure chest.
+(Desc)But contrary to your expectations, there is nothing inside.
+(Choice)[Right_Room]Close it.
+[EndScene]
+
+[Scene]
+(ID)[Couch]
+(Stat)-
+(Desc)After dusting it slightly, you take a tentative seat on the covered couch.
+(Desc)Almost immediately, you relax as the leather sinks to accommodate you.
+(Choice)[First_Floor_Lobby]Leave the comfort behind.
 [EndScene]
 
 [Scene]
@@ -172,11 +266,12 @@
 
 [Scene]
 (ID)[End_Brooch]
-(Desc)After putting on a glove, you dust off the brooch and place it in a prepared case. The task is complete. Retracing your steps, you make your way back to the front porch after taking one last look at the place. 
+(Desc)After putting on a glove, you dust off the brooch and place it in a prepared case. The task is complete. 
+(Desc)Retracing your steps, you make your way back to the front porch after taking one last look at the place. 
 (Choice)[Exit]Leave the manor.
 [EndScene]
 
 [Scene]
 (ID)[Exit]
-(Desc)Without further ado, you return to your car and drive away from the manor.
+(Desc)You return to your car and drive away from the manor.
 [EndScene]

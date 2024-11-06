@@ -6,7 +6,7 @@
 DesertedIslandObject::DesertedIslandObject() {
 
 	/* Definitions: */
-	timer = 100.0f;
+	timer = 70.0f;
 	playerHealth = 30;
 	daysLeft = 7;
 	filename = "DesertedIsland_Adventure.txt";
@@ -79,7 +79,7 @@ void DesertedIslandObject::SetEnding(std::string& sceneID) {
 		daysLeft -= 1;
 		if (daysLeft > 0) {
 		
-			timer = 100;
+			timer = 70;
 		
 		}
 
@@ -117,7 +117,7 @@ void DesertedIslandObject::SetTime(std::string& sceneID) {
 	if (timer <= 0) {
 
 		daysLeft -= 1;
-		timer = 100;
+		timer = 70;
 		sceneID = "[Time]";
 
 	}

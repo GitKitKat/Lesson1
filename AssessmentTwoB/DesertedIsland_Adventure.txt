@@ -1,6 +1,6 @@
 [Scene]
 (ID)[Introduction]
-(Desc)You awake on an empty beach, surrounded by short cliffs.
+(Desc)You stand on an empty beach, surrounded by short cliffs.
 (Desc)Around you are the scattered wrecks of a rowboat, and before you is a sloping path inland. 
 (Desc)In the distance you can see a lighthouse, but much of it is obscured by fog. 
 (Desc)Behind you is the rumbling sea.
@@ -73,10 +73,10 @@
 (Desc)Gritting your teeth, you continue climbing until you see weeds in the terrain.
 (Desc)Pulling yourself over the edge, you take some time to catch your breath.
 (Desc)
-(Desc)Ahead of you is a copse of trees that look a little different from those you saw from the beach.
+(Desc)Ahead of you is a flat stretch of land with few trees.
 (Desc)To your side is a short drop into a clearing.
-(Choice)[Forest]Head into the forest.
-(Choice)[Clearing]
+(Choice)[Crossing_Forest]Head towards the flatland.
+(Choice)[Clearing]Head down to the clearing.
 [EndScene]
 
 [Scene]
@@ -100,8 +100,36 @@
 
 [Scene]
 (ID)[Forest]
+(Desc)You find yourself surrounded by trees decorated by algae.
+(Desc)Among the surrounding shrubs are many seawater plants growing in small puddles.
+(Desc)Although the vegetation is thriving, the wildlife is sparse, and you note that there are more birds than land animals.
 (Desc)
-(Choice)[Clearing]
+(Desc)You can see glimpses of the lighthouse over the treetops. To your side is a path sloping downwards.
+(Choice)[Crossing_Forest]Follow the sloping path.
+(Choice)[Clearing]Head back to the clearing.
+(Choice)[Lighthouse]Head towards the lighthouse.
+[EndScene]
+
+[Scene]
+(ID)[Crossing_Forest]
+(Desc)Ahead of you, the landscape becomes more and more barren, and the sea's scent is much sharper.
+(Desc)The land here is much lower than the rest of the island. To your left, the path slopes up into the forest.
+(Desc)You can faintly hear the sound of rushing water.
+(Desc)
+(Desc)To your far right, you can see a gulley that a particularly large tide would flood completely.
+(Choice)[Flatland]Continue exploring.
+(Choice)[Beach]Walk towards the gulley.
+(Choice)[Forest]Follow the path into the forest.
+(Choice)[River_Crossing]Head to the river.
+[EndScene]
+
+[Scene]
+(ID)[Flatland]
+(Desc)The area you find yourself in is about two-thirds the height of the beach's cliffs.
+(Desc)There are track marks of a large vehicle across the length of the space.
+(Desc)The lighthouse is only a few meters away.
+(Choice)[Crossing_Forest]Head down the island.
+(Choice)[Lighthouse]Walk towards the lighthouse.
 [EndScene]
 
 [Scene]
@@ -113,7 +141,7 @@
 [Scene]
 (ID)[Camp]
 (Stat)+
-(Desc)With a short day ahead, you contemplate your next actions.
+(Desc)With a short day ahead, you climb down and contemplate your next actions.
 (Choice)[Clearing]Head into the clearing.
 [EndScene]
 
@@ -121,6 +149,7 @@
 (ID)[River]
 (Desc)Ahead of you is a bubbling stream with clear water and lined with shrubs.
 (Desc)The water is neither too deep nor too wide. 
+(Choice)[Clearing]Head to the clearing.
 (Choice)[Fishing]Try for a fish.
 (Choice)[Berries]Search the nearby bushes.
 (Choice)[River_Crossing]Wade over to the other shore.
@@ -134,7 +163,7 @@
 (Desc)
 (Desc)After cooking it over a small fire, you feel a little fuller.
 (Choice)[River]Put away the fishing rod.
-(Choice)[Clearing]Leave the stream.
+(Choice)[Clearing]Leave the water.
 [EndScene]
 
 [Scene]
@@ -145,14 +174,15 @@
 (Desc)
 (Desc)Following the virtue of 'quantity over quality', you feel a little fuller.
 (Choice)[River]Wash off your hands.
-(Choice)[Clearing]Leave the stream.
+(Choice)[Clearing]Leave the water.
 [EndScene]
 
 [Scene]
 (ID)[River_Crossing]
+(Stat)-
 (Desc)After rolling up your tattered pants, you wade through the water.
-(Desc)The new shore seems more barren, but that could just be your imagination.
-(Choice)[Crossing_Forest]
+(Desc)The new shore seems greener, but that could just be your imagination.
+(Choice)[Crossing_Forest]Head out of the forest.
 (Choice)[River]Wade back to the other shore.
 [EndScene]
 
@@ -162,6 +192,60 @@
 (Desc)Beset by hunger, you abandon your current efforts to scavenge for edible foliage.
 (Desc)After washing down the aftertaste, you wait for digestion to kick in before continuing.
 (Choice)[Clearing]Head to the forest's clearing.
+[EndScene]
+
+[Scene]
+(ID)[Lighthouse]
+(Desc)In the heart of the island, perched on a large hill, is a tall lighthouse.
+(Desc)The swirling white and red patterns on it have faded, and many areas have been tinted green.
+(Desc)Even so, the structure is sturdy.
+(Choice)[Flatland]Walk around the lighthouse.
+(Choice)[Lighthouse_Lobby]Enter the lighthouse.
+(Choice)[Forest]Turn back to the forest.
+[EndScene]
+
+[Scene]
+(ID)[Lighthouse_Lobby]
+(Desc)There is little inside the lighthouse, save for a winding staircase and the door you entered.
+(Choice)[Lighthouse_Top]Walk up the stairs.
+(Choice)[Lighthouse]Leave the lighthouse.
+[EndScene]
+
+[Scene]
+(ID)[Lighthouse_Top]
+(Desc)The top of the lighthouse is just as empty as its entrance, save for large windows, a control panel, and a small radio.
+(Desc)Although it seems to have been abandoned for a long time, there is a map nearby that you recognize.
+(Desc)It is helpfully marked with your current location, so if you could make contact with the outside world...
+(Choice)[Lighthouse]Leave the lighthouse.
+(Choice)[Radio]Turn on the radio.
+(Choice)[Beacon]Activate the beacon.
+[EndScene]
+
+[Scene]
+(ID)[Radio]
+(Desc)The radio crackles to life, and you hastily connect to the nearest coastal guard.
+(Desc)The receiver is surprised, but readily agrees to send a team for your rescue.
+(Choice)[End_Saved]Tell them your location.
+(Choice)[Beacon]Activate the beacon.
+(Choice)[Lighthouse_Top]Turn off the radio.
+[EndScene]
+
+[Scene]
+(ID)[Beacon]
+(Desc)You approach the control panel. 
+(Desc)Many of its buttons have rusted, so the beacon can only be turned on and off.
+(Desc)Luckily, there is a morse code alphabet stapled to the map, so it's possible for you to send out a message.
+(Choice)[Radio]Turn on the radio.
+(Choice)[End_Saved]Send an SOS.
+(Choice)[Lighthouse_Top]Back away from the control panel.
+[EndScene]
+
+[Scene]
+(ID)[End_Saved]
+(Desc)Not long after, you hear the sound of an airplane in the distance.
+(Desc)It turns out that the flattened area near the forest could be used as a landing spot.
+(Desc)As the aircraft flies closer, so too does freedom.
+(Choice)[Exit]Await the rescuers.
 [EndScene]
 
 [Scene]
